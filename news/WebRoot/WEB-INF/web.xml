@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>news</display-name>
+  
+   <!-- 自定义全局action变量并赋初始值（即所有action共用） -->
+   <!--  
+   <context-param>
+	 <param-name>pagesize</param-name>
+	 <param-value>3</param-value>
+   </context-param> 
+   -->
+  
+  <!-- servlet -->
+  <servlet>
+    <servlet-name>TestAction</servlet-name>
+    <servlet-class>com.action.TestAction</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginAction</servlet-name>
+    <servlet-class>com.action.LoginAction</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>TopicListAction</servlet-name>
+    <servlet-class>com.action.TopicListAction</servlet-class>
+     <!-- 自定义局部action变量并赋初始值 -->
+    <!-- 
+    <init-param>
+	    <param-name>pagesize</param-name>
+	    <param-value>8</param-value>
+    </init-param>
+     -->
+  </servlet>
+  <servlet>
+    <servlet-name>AddTopicAction</servlet-name>
+    <servlet-class>com.action.AddTopicAction</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelTopicAction</servlet-name>
+    <servlet-class>com.action.DelTopicAction</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateTopicAction</servlet-name>
+    <servlet-class>com.action.UpdateTopicAction</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OneTopicAction</servlet-name>
+    <servlet-class>com.action.OneTopicAction</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>IndexAction</servlet-name>
+    <servlet-class>com.action.IndexAction</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddNewsAction</servlet-name>
+    <servlet-class>com.action.AddNewsAction</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelNewsAction</servlet-name>
+    <servlet-class>com.action.DelNewsAction</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateNewsAction</servlet-name>
+    <servlet-class>com.action.UpdateNewsAction</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OneNewsAction</servlet-name>
+    <servlet-class>com.action.OneNewsAction</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminAction</servlet-name>
+    <servlet-class>com.action.AdminAction</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+  
+
+  	<!-- 在action中取xml中自定义的值 -->
+	<!-- 先取全局的 -->
+	<!-- 
+	String cs = getServletContext().getInitParameter("pagesize");
+	int pagesize = Integer.parseInt(cs);
+	//再取单个的
+	String psize = this.getInitParameter("pagesize");  //取对单独servlet传的值
+	if(psize != null){
+		pagesize = Integer.parseInt(psize);
+	} 
+	-->
+
+
+  <servlet-mapping>
+    <servlet-name>TestAction</servlet-name>
+    <url-pattern>/TestAction</url-pattern> 
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginAction</servlet-name>
+    <url-pattern>/LoginAction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TopicListAction</servlet-name>
+    <url-pattern>/TopicListAction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddTopicAction</servlet-name>
+    <url-pattern>/AddTopicAction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelTopicAction</servlet-name>
+    <url-pattern>/DelTopicAction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateTopicAction</servlet-name>
+    <url-pattern>/UpdateTopicAction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OneTopicAction</servlet-name>
+    <url-pattern>/OneTopicAction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>IndexAction</servlet-name>
+    <url-pattern>/IndexAction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddNewsAction</servlet-name>
+    <url-pattern>/AddNewsAction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelNewsAction</servlet-name>
+    <url-pattern>/DelNewsAction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateNewsAction</servlet-name>
+    <url-pattern>/UpdateNewsAction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OneNewsAction</servlet-name>
+    <url-pattern>/OneNewsAction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminAction</servlet-name>
+    <url-pattern>/AdminAction</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- 首页 -->
+  <welcome-file-list>
+  <welcome-file>IndexAction</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
